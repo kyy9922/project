@@ -3,33 +3,27 @@
     <div class="inner">
       <header id="header">        
         <nav class="h_menu">
-          <h2 class="blind">Menu</h2>
           <button type="button" class="hm_btn">
             <i></i>
             <i></i>
-            <ul style="display:none;">
+            <span class="blind">전체메뉴</span>
+          </button>
+          <div class="hm_wrap">
+            <ul>
               <li>
                 <strong>01</strong>
-                <span>About</span>
-                <a href="/weare/">WE ARE</a>
+                <a href="#">ABOUT ME</a>
               </li>
               <li>
                 <strong>02</strong>
-                <span>Design</span>
-                <a href="/service/">SERVICE</a>
+                <a href="#">PORTFOLIO</a>
               </li>
               <li>
-                <strong>03</strong>
-                <span>Develop</span>
-                <a href="/work/">WORK</a>
-              </li>
-              <li>
-                <strong>04</strong>
-                <span>Map</span>
-                <a href="/insight/">INSIGHT</a>
+                <strong>02</strong>
+                <a href="#">MY ALL SKILL</a>
               </li>              
-            </ul>    
-          </button>
+            </ul>
+          </div>
         </nav>
         <div class="h_logo">
           <a href="/"><h1 class="logo"></h1></a>
@@ -64,7 +58,26 @@
 <script>
 export default {
   name: "headerComp",
-};
+  mounted() {
+    /* 메뉴 오픈 */
+	$(document).on('click', '.hm_btn', function(){
+		$('.h_menu').stop().toggleClass('open')
+    $('.hm_btn').toggleClass('changed').stop();
+    $('.hm_btn i').toggleClass('changed').stop();
+	});
+  
+	$(document).on("click", '.ff_btn', function(){
+		$('.f_family').stop().toggleClass('on');
+		$(".check .csft_list.t1").removeClass('open');
+		$(".check .csft_list.t2").removeClass('open');
+	});
+    
+
+  },
+}
+
+
+
 </script>
 
 <style>

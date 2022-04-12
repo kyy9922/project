@@ -3,6 +3,8 @@
     <Header />
     <Content />
     <Footer />
+
+    
     
   
 </template>
@@ -11,12 +13,17 @@
 import Header from './components/Header.vue';
 import Content from './components/Content.vue';
 import Footer from './components/Footer.vue';
-import $ from 'jquery';
 
 export default {
   name: 'App',
+  data (){
+    return{
+    }
+  },  
   components: {
     Header,Content,Footer,
+  },
+  mounted() {
   }
 }
 </script>
