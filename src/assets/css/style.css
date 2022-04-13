@@ -112,7 +112,9 @@
     height: 960px;
     margin: 0 auto;
     position: relative;
-    background: url(../images/bg_line.png)no-repeat center center
+    background: url(../images/bg_line.png)no-repeat center center;
+    padding:0 30px;
+    box-sizing:border-box;
 }
 
 #header {
@@ -230,7 +232,7 @@
     position: relative;
     z-index: 12;
     float: left;
-    width: 80px;
+    width: 60px;
     height: 20px;
     background:transparent;
     cursor: pointer;
@@ -1236,7 +1238,7 @@
 /* content 끝 */
 
 /* Footer 시작 */
-#footer {}
+#footer {overflow: hidden;}
 
 .footup ul {
     display: flex
@@ -1249,6 +1251,7 @@
     border-right: 1px solid #333;
     border-top: 1px solid #333;
     display: flex;
+    box-sizing:border-box;
 }
 
 .footup ul li:nth-child(3) {
@@ -1307,14 +1310,6 @@
 
 /* Footer 끝 */
 
-/* 반응형 */
-@media screen and (max-width: 1600px) {
-    #wrap .inner {
-        width: 100%;
-    }
-}
-
-
 /* 플러그인 sliclslide */
 .visual {
     position: relative;
@@ -1371,3 +1366,86 @@
 .visual button.slick-next::before {
     content: "\f105"
 }
+
+/* 반응형 */
+@media screen and (max-width: 1600px) {
+    #wrap .inner {width: 100%;}
+    #header .h_logo {margin-right:60px;}
+    #header .h_menu .hm_btn {margin-left:60px;}
+}
+@media screen and (max-width: 1200px) {
+    #wrap:after {display:none;}
+    #wrap:before {display:none;}
+    .slogan {padding:0 20px;position:relative;text-align: center;top:10%;margin:0 auto;left:50%;transform:translateX(-50%);}
+    .slogan_txt1{font-size:42px}
+    .slogan_txt2 {font-size:20px}
+    .slogan_txt3 {font-size:16px;margin-top:20px;}
+    .footup ul {flex-direction: column;}
+    .footup ul li {width:100%;border-right:none;padding:26px 60px;}
+    .footup ul li strong:after {left:15px;}
+    .footup ul li span {right:15px;}
+    .photo_box {top:65%;right:50%;transform:translateX(50%);animation:none;
+    width:360px;height:460px}
+    .photo_box .image {width:320px;height:420px;background-size:cover;}
+    .block {display:inline;}
+    .edge_txt {display:none;}
+    .photo_wrap .about{right:50%;bottom:70px;transform:translateX(50%);
+    box-sizing: border-box;padding:20px 40px;width:360px;}
+    .scrolldown {display:none;}
+    .myportfolio>div:nth-child(1) h3 {text-align: center;margin:60px auto;}
+    
+    
+}
+@media screen and (max-width: 1024px) {
+    .myportfolio{flex-direction: column}
+    .myportfolio>div{width:100%;height:360px;box-sizing: border-box;}
+    .myportfolio>div:nth-child(1) {height:170px;border-right:none;}
+    .myportfolio>div:nth-child(2) .tit-box, 
+    .myportfolio>div:nth-child(3) .tit-box {margin:50px}
+    .myportfolio>div:nth-child(2) {
+        background: #fffef9 url(http://localhost:8080/img/myportfolio_img01.372bd8d9.jpg)no-repeat right 30px bottom 30px;
+        background-size:50%;
+        border-right:none;
+    }
+    .myportfolio>div:nth-child(3){
+        background: #fffef9 url(http://localhost:8080/img/myportfolio_img02.c97efe73.jpg)no-repeat right 30px bottom 30px;
+        background-size:50%;
+    }
+    .skill {flex-direction: column;}
+    .skill>div {width:100%;}
+    .skill>div:nth-child(1) {border-right:none;}
+    .skill>div:nth-child(3) {border-right:none;}
+}
+
+@media screen and (max-width: 768px) {
+    #header {top:30px;}
+    
+    .skill>div:nth-child(2) h3, .skill>div:nth-child(3) h3 {font-size:32px;}
+    .skill>div .txt-box {left:30px;bottom:30px;}
+    .skill .txt-box p, .skill .txt-box span {font-size:18px};
+    .design_box ul {display: flex;flex-direction: row;flex-wrap: wrap;}
+    .design_box ul li{width:50% !important;}
+    .develops_box ul {display: flex;flex-direction: row;flex-wrap: wrap;}
+    .develops_box ul li{width:50% !important;}
+    .skill>div{height:auto;}
+    .skill .tab_box {height:360px;}
+    .skill .slide_box {height:360px;}
+    .skill .tab_box {background-size:cover;}
+    .skill .develops_box, .skill .design_box {padding-top:60px;}
+    .skill>div:nth-child(1) h4, .skill>div:nth-child(4) h4 {margin-bottom:30px;}
+    .tabs .tab-menu li a{font-size:16px;}
+    .tabs .tab-menu li {height:60px;}
+    .slogan {top:6%;}
+    .slogan_txt1 {font-size:32px;}
+    .slogan_txt2 {font-size:18px;}
+}
+@media screen and (max-width: 480px) {
+    .photo_box {width: 320px; height: 420px;}
+    .photo_box .image {width: 280px;height: 380px;background-size:cover;}
+    .photo_wrap .about {width:320px;bottom:120px;}
+    .photo_wrap .about:after{display:block;}
+    #header .h_logo {margin-right:0;}
+    #header .h_menu .hm_btn {margin-left:0;}
+}
+
+
